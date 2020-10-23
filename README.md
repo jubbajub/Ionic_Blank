@@ -26,3 +26,5 @@ const firebaseConfig = {
   appId: "1:86724448394:web:014d61306e95af0be11d73",
   measurementId: "G-WXWJ45PECG"
 };
+
+Unter -->"Cloud Firestore" findet man die Datenbank
