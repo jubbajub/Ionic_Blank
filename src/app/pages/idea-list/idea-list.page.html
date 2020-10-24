@@ -1,19 +1,33 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>My Ideas</ion-title>
-  </ion-toolbar>
-</ion-header>
- 
-<ion-content>
+
+
+<ion-content class="ion-padding">
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/idea">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
- 
-  <ion-list>
-    <ion-item button [routerLink]="['/idea', idea.id]" *ngFor="let idea of (ideas | async)">
-      {{ idea.name }}
-    </ion-item>
-  </ion-list>
+
+
+
+
+  <table class="blueTable">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headIdeaElements" >{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr   *ngFor="let idea of (ideas | async), let i = index;">
+        <th>      <a [routerLink]="['/idea', idea.id]">
+          {{i}}
+        </a></th>
+        <td>{{idea.name}}</td>
+        <td>{{idea.notes}}</td>
+        <!-- <td>{{idea.category}}</td> -->
+      </tr>
+    </tbody>
+  </table>
+
+
 </ion-content>
+ 

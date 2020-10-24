@@ -1,10 +1,10 @@
-"# Ionic_Blank" 
-"# Ionic_Blank" 
+
+# Ionic_Blank #
 
 TUTORIAL aus : https://devdactic.com/ionic-4-firebase-angularfire-2/
 
 Probleme:
-Das Tutorial ist in Angular 8 geschrieben. Aber ich habe hier die Ionic Blank Version 6 in Angular 10 verwendet. Deshalb muss man in app.module.ts den Begriff 
+Das Tutorial ist in Angular 8 geschrieben. Aber ich habe hier die Ionic Blank Version 6 in Angular 10 verwendet. Deshalb muss man in app.module.ts den Begriff
 "FirestoreSettingsToken" durch "SETTINGS" ersetzen
 
 FIREBASE:
