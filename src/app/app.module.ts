@@ -14,7 +14,7 @@ import { environment } from '../environments/environment';
 
 // BUG: FirestoreSettingsToken durch SETTINGS ersetzen
 import { AngularFirestoreModule, SETTINGS } from '@angular/fire/firestore';
- 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
