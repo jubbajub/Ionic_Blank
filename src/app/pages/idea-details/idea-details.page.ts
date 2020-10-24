@@ -14,6 +14,7 @@ export class IdeaDetailsPage implements OnInit {
     topic: '',
     notes: '',
     createdDate: new Date(),
+    lastUpdate: new Date(),
   };
  
   constructor(

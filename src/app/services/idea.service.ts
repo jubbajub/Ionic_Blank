@@ -8,6 +8,7 @@ export interface Idea {
   topic: string;
   notes: string;
   createdDate: Date;
+  lastUpdate: Date;
 }
  
 @Injectable({
@@ -50,7 +51,7 @@ export class IdeaService {
  
   updateIdea(idea: Idea): Promise<void> {
     // return this.ideaCollection.doc(idea.id).update({ topic: idea.topic, notes: idea.notes });
-    return this.ideaCollection.doc(idea.id).update({ topic: idea.topic, notes: idea.notes , createdDate: idea.createdDate, });
+    return this.ideaCollection.doc(idea.id).update({ topic: idea.topic, notes: idea.notes , createdDate: idea.createdDate, lastUpdate: new Date() });
   }
  
   deleteIdea(id: string): Promise<void> {
