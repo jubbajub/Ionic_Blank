@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class IdeaListPage implements OnInit {
  
-  private ideas: Observable<Idea[]>;
+  public ideas: Observable<Idea[]>;
    // muss programmatisch vom interface ermittelt werden (src\app\services\idea.service.ts)
    headIdeaElements = ['ID', 'Name', 'Notes', 'Category'];
    
