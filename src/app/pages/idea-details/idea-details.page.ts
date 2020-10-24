@@ -11,7 +11,7 @@ import { ToastController } from '@ionic/angular';
 export class IdeaDetailsPage implements OnInit {
  
   idea: Idea = {
-    name: '',
+    topic: '',
     notes: ''
   };
  

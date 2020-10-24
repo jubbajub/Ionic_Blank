@@ -11,7 +11,7 @@ export class IdeaListPage implements OnInit {
  
   public ideas: Observable<Idea[]>;
    // muss programmatisch vom interface ermittelt werden (src\app\services\idea.service.ts)
-   headIdeaElements = ['ID', 'Name', 'Notes', 'Category'];
+   headIdeaElements = ['ID', 'TOPIC', 'NOTIZ', 'Category'];
    
   constructor(private ideaService: IdeaService) { }
  

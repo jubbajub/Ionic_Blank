@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
  
 export interface Idea {
   id?: string;
-  name: string;
+  topic: string;
   notes: string;
 }
  
@@ -48,7 +48,7 @@ export class IdeaService {
   }
  
   updateIdea(idea: Idea): Promise<void> {
-    return this.ideaCollection.doc(idea.id).update({ name: idea.name, notes: idea.notes });
+    return this.ideaCollection.doc(idea.id).update({ topic: idea.topic, notes: idea.notes });
   }
  
   deleteIdea(id: string): Promise<void> {
