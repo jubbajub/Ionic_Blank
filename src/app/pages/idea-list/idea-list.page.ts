@@ -11,11 +11,12 @@ export class IdeaListPage implements OnInit {
  
   public ideas: Observable<Idea[]>;
    // muss programmatisch vom interface ermittelt werden (src\app\services\idea.service.ts)
-   headIdeaElements = ['ID', 'TOPIC', 'NOTIZ', 'Category'];
+   headIdeaElements = ['ID', 'TOPIC', 'NOTIZ', 'createdDate'];
    
   constructor(private ideaService: IdeaService) { }
  
   ngOnInit() {
     this.ideas = this.ideaService.getIdeas();
   }
+  
 }

@@ -10,8 +10,8 @@
 <ion-content padding>
  
   <ion-item>
-    <ion-label position="stacked">Name</ion-label>
-    <ion-input [(ngModel)]="idea.name"></ion-input>
+    <ion-label position="stacked">TOPIC</ion-label>
+    <ion-input [(ngModel)]="idea.topic"></ion-input>
   </ion-item>
  
   <ion-item>
@@ -19,7 +19,12 @@
     <ion-textarea [(ngModel)]="idea.notes" rows="8"></ion-textarea>
   </ion-item>
 </ion-content>
- 
+
+<!-- <ion-item>
+  <ion-label position="stacked">createdDate</ion-label>
+  <ion-label [(ngModel)]="idea.createdDate"></ion-label>
+</ion-item> -->
+
 <ion-footer *ngIf="!idea.id">
   <ion-toolbar color="success">
     <ion-button expand="full" fill="clear" color="light" (click)="addIdea()">

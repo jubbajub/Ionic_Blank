@@ -12,11 +12,12 @@ export class IdeaDetailsPage implements OnInit {
  
   idea: Idea = {
     topic: '',
-    notes: ''
+    notes: '',
+    createdDate: new Date(),
   };
  
   constructor(
-    private activatedRoute: ActivatedRoute, 
+    private activatedRoute: ActivatedRoute,
     private ideaService: IdeaService,
     private toastCtrl: ToastController,
     private router: Router
@@ -25,7 +26,7 @@ export class IdeaDetailsPage implements OnInit {
   ngOnInit() { }
  
   ionViewWillEnter() {
-    let id = this.activatedRoute.snapshot.paramMap.get('id');
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
     if (id) {
       this.ideaService.getIdea(id).subscribe(idea => {
         this.idea = idea;
@@ -53,6 +54,7 @@ export class IdeaDetailsPage implements OnInit {
  
   updateIdea() {
     this.ideaService.updateIdea(this.idea).then(() => {
+      this.router.navigateByUrl('/');
       this.showToast('Idea updated');
     }, err => {
       this.showToast('There was a problem updating your idea :(');
@@ -62,7 +64,8 @@ export class IdeaDetailsPage implements OnInit {
   showToast(msg) {
     this.toastCtrl.create({
       message: msg,
-      duration: 2000
+      duration: 1000
     }).then(toast => toast.present());
+
   }
 }

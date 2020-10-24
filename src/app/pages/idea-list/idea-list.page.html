@@ -21,9 +21,12 @@
         <th>      <a [routerLink]="['/idea', idea.id]">
           {{i}}
         </a></th>
-        <td>{{idea.name}}</td>
+        <td>{{idea.topic}}</td>
         <td>{{idea.notes}}</td>
-        <!-- <td>{{idea.category}}</td> -->
+        <td>{{idea.createdDate * 1000 |  date:'dd/MM/yyyy HH:mm:ss '}}</td>
+        <!-- ALTERNATIVE -->
+        <!-- <td>{{idea.createdDate.toDate() |  date:'dd/MM/yyyy HH:mm:ss '}}</td>
+         -->
       </tr>
     </tbody>
   </table>
