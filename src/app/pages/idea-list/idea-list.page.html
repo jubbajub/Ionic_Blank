@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
 
-    <ion-title>Idea List</ion-title>
+    <ion-title>Idea List - 2020-10-24 22:02</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,6 +13,12 @@
   </ion-fab>
   <p><br>
         
+    <ion-list>
+      <ion-item button [routerLink]="['/idea', idea.id]" *ngFor="let idea of (ideas | async), let i = index;">
+        {{i}} - {{ idea.topic }} --> {{ (idea.notes.length>6)? (idea.notes | slice:0:20)+'..':(idea.notes) }} ({{idea.createdDate.toDate() |  date:'dd.MM.yyyy '}})
+      </ion-item>
+    </ion-list>
+
   <table class="blueTable">
     <thead>
       <tr>
@@ -25,12 +31,14 @@
           {{i}}
         </a></th>
         <td>{{idea.topic}}</td>
-        <td>{{idea.notes}}</td>
-        <td>{{idea.createdDate * 1000 |  date:'dd/MM/yyyy HH:mm:ss '}}</td>
+        <td>{{ (idea.notes.length>6)? (idea.notes | slice:0:20)+'..':(idea.notes) }}</td>
+        <td>{{idea.createdDate.toDate() |  date:'dd.MM.yyyy HH:mm:ss '}}</td>
         <!-- ALTERNATIVE -->
         <!-- <td>{{idea.createdDate.toDate() |  date:'dd/MM/yyyy HH:mm:ss '}}</td>
+              <td>{{idea.createdDate.seconds * 1000 |  date:'dd/MM/yyyy HH:mm:ss '}}</td>
+              <td>{{idea.createdDate.toMillis() |  date:'dd/MM/yyyy HH:mm:ss '}}</td>
          -->
-         <td>{{idea.lastUpdate * 1000 |  date:'dd/MM/yyyy HH:mm:ss '}}</td>
+         <td>{{idea.lastUpdate.toDate() |  date:'dd/MM/yyyy HH:mm:ss '}}</td>
       </tr>
     </tbody>
   </table>
