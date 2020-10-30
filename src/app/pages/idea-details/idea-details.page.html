@@ -18,7 +18,19 @@
     <ion-label position="stacked">NOTIZ</ion-label>
     <ion-textarea [(ngModel)]="idea.notes" rows="4"></ion-textarea>
   </ion-item>
+
+  <ion-item>
+    <ion-label>Date & Time</ion-label>
+
+    <ion-datetime 
+    displayFormat="DD-MMM-YYYY hh:mm:ss A" 
+    pickerFormat="DD-MMM-YY HH:mm">
+    </ion-datetime>
+  </ion-item>
+  
 </ion-content>
+
+
 
 <!-- <ion-item>
   <ion-label position="stacked">createdDate</ion-label>
