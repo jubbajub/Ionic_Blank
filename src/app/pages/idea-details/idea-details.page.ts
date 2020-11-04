@@ -15,7 +15,7 @@ export class IdeaDetailsPage implements OnInit {
     notes: '',
     createdDate: new Date(),
     lastUpdate: new Date(),
-    value: '',
+    value: null,
     unit: '',
   };
  
